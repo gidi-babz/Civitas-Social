@@ -32,6 +32,7 @@ const Icons = styled(Box)(({ theme }) => ({
 	display: 'none',
 	gap: '20px',
 	alignItems: 'center',
+	cursor: 'pointer',
 	[theme.breakpoints.up('sm')]: {
 		display: 'flex',
 	},
@@ -41,6 +42,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 	display: 'none',
 	gap: '10px',
 	alignItems: 'center',
+	cursor: 'pointer',
 	[theme.breakpoints.down('sm')]: {
 		display: 'flex',
 	},
@@ -64,7 +66,7 @@ const Navbar = () => {
 				</Typography>
 				<GroupOutlinedIcon sx={{ display: { xs: 'block', sm: 'none' } }} />
 				<Search>
-					<InputBase placeholder="Search..." />
+					<InputBase placeholder="Search..." sx={{ width: '100%' }} />
 				</Search>
 				<Icons>
 					<Badge badgeContent={4} color="error">
