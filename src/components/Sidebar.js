@@ -17,75 +17,79 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-const Sidebar = () => {
+const Sidebar = ({ mode, setMode }) => {
 	return (
 		<Box flex={1} p={2} sx={{ display: { xs: 'none', sm: 'block' } }}>
-			<List>
-				<ListItem disablePadding>
-					<ListItemButton component="a" href="#home">
-						<ListItemIcon>
-							<HomeIcon />
-						</ListItemIcon>
-						<ListItemText primary="Homepage" />
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton component="a" href="#home">
-						<ListItemIcon>
-							<ArticleIcon />
-						</ListItemIcon>
-						<ListItemText primary="Pages" />
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton component="a" href="#home">
-						<ListItemIcon>
-							<GroupIcon />
-						</ListItemIcon>
-						<ListItemText primary="Groups" />
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton component="a" href="#home">
-						<ListItemIcon>
-							<StorefrontIcon />
-						</ListItemIcon>
-						<ListItemText primary="Marketplace" />
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton component="a" href="#home">
-						<ListItemIcon>
-							<PersonIcon />
-						</ListItemIcon>
-						<ListItemText primary="Friends" />
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton component="a" href="#home">
-						<ListItemIcon>
-							<SettingsIcon />
-						</ListItemIcon>
-						<ListItemText primary="Settnngs" />
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton component="a" href="#home">
-						<ListItemIcon>
-							<AccountBoxIcon />
-						</ListItemIcon>
-						<ListItemText primary="Profile" />
-					</ListItemButton>
-				</ListItem>
-				<ListItem disablePadding>
-					<ListItemButton component="a" href="#home">
-						<ListItemIcon>
-							<DarkModeIcon />
-						</ListItemIcon>
-						<Switch />
-					</ListItemButton>
-				</ListItem>
-			</List>
+			<Box sx={{ position: 'fixed' }}>
+				<List>
+					<ListItem disablePadding>
+						<ListItemButton component="a" href="#home">
+							<ListItemIcon>
+								<HomeIcon />
+							</ListItemIcon>
+							<ListItemText primary="Homepage" />
+						</ListItemButton>
+					</ListItem>
+					<ListItem disablePadding>
+						<ListItemButton component="a" href="#home">
+							<ListItemIcon>
+								<ArticleIcon />
+							</ListItemIcon>
+							<ListItemText primary="Pages" />
+						</ListItemButton>
+					</ListItem>
+					<ListItem disablePadding>
+						<ListItemButton component="a" href="#home">
+							<ListItemIcon>
+								<GroupIcon />
+							</ListItemIcon>
+							<ListItemText primary="Groups" />
+						</ListItemButton>
+					</ListItem>
+					<ListItem disablePadding>
+						<ListItemButton component="a" href="#home">
+							<ListItemIcon>
+								<StorefrontIcon />
+							</ListItemIcon>
+							<ListItemText primary="Marketplace" />
+						</ListItemButton>
+					</ListItem>
+					<ListItem disablePadding>
+						<ListItemButton component="a" href="#home">
+							<ListItemIcon>
+								<PersonIcon />
+							</ListItemIcon>
+							<ListItemText primary="Friends" />
+						</ListItemButton>
+					</ListItem>
+					<ListItem disablePadding>
+						<ListItemButton component="a" href="#home">
+							<ListItemIcon>
+								<SettingsIcon />
+							</ListItemIcon>
+							<ListItemText primary="Settings" />
+						</ListItemButton>
+					</ListItem>
+					<ListItem disablePadding>
+						<ListItemButton component="a" href="#home">
+							<ListItemIcon>
+								<AccountBoxIcon />
+							</ListItemIcon>
+							<ListItemText primary="Profile" />
+						</ListItemButton>
+					</ListItem>
+					<ListItem disablePadding>
+						<ListItemButton component="a" href="#home">
+							<ListItemIcon>
+								<DarkModeIcon />
+							</ListItemIcon>
+							<Switch
+								onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}
+							/>
+						</ListItemButton>
+					</ListItem>
+				</List>
+			</Box>
 		</Box>
 	);
 };
